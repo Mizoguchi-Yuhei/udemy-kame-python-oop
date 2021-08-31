@@ -4,22 +4,26 @@ class Person:
         self.name = name
         self._age = age
 
-    def get_age(self):
+    @property
+    def age(self):
         print("get_age called!")
         return self._age
 
-    def set_age(self, age):
+    @age.setter
+    def age(self, age):
         print("set_age called!")
         if age < 0:
             print("0以上の値を入れてください")
         else:
             self._age
 
-    age = property(get_age, set_age)
+    # age = property(get_age, set_age)
 
 john = Person("John", 10)
 print(john.age)
 john.age = -10
+john.age = 15
+print(john.age)
 
 # print(john.age)
 # print(john.get_age())
