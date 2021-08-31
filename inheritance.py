@@ -8,19 +8,11 @@ class Animal(object):
 
 
 class Dog(Animal):
-    pass
+    def __init__(self, namae):
+        super().__init__(name=namae)
+        print("Dog init is called.")
 
-
-class Cat(Animal):
-    pass
-
-
-class Bird(Animal):
-    pass
 
 pochi = Dog("pochi")
-tama = Cat("tama")
 print(pochi.name)
-print(tama.name)
 pochi.breath()
-tama.breath()
